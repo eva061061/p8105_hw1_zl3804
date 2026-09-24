@@ -5,11 +5,16 @@ date: "2026-09-22"
 output: github_document
 ---
 
- Section 0 download dataset from package
+# Section 0 download dataset from package
 ```{r}
  data("penguins", package = "palmerpenguins")
 ```
 This datasheet contains `r nrow(penguins)` subjects and `r ncol(penguins)` variables to describe the dimensions of penguins, introducing us the year, species, island, sex of those penguins, and bill_length_mm, bill_depth_mm, flippers_length_mm, body_mass_g in relative measures.
 Among those, mean of their flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`mm.
+
+# Section 1 Make a  scatterplot
+
+
+
  
 
