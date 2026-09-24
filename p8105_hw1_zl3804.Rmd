@@ -1,6 +1,7 @@
 ---
 title: "p8105_hw1_zl3804.Rmd"
-author: "eva/Zhuoxuan Li"
+author: "Eva/Zhuoxuan Li"
+
 date: "2026-09-22"
 output: github_document
 ---
@@ -45,10 +46,22 @@ mean_level = mean(pull(frame_samp, level))
 
 ```
 Show which variable can caculate means and which can't :
-The mean of normal distribution R.V. is `r mean_norm`
+
+The mean of normal distribution R.V. is `r mean_normx`
+
 The mean of logic function outcoe is  `r mean_log_normx`
+
 The mean of characters is `r mean_chara`
+
 The mean of factor R.V. is `r mean_level`
+
+# Section 4 Convert variable types
+
+```{r echo = TRUE, results='hide'}
+
+
+```
+
 
 
 
