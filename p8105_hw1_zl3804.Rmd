@@ -24,6 +24,35 @@ ggsave("penguins_scatterplot.png")
 
 ```
 
+# Section 3 Create dataframe
+
+```{r}
+library(tidyverse)
+
+set.seed(8130)
+
+frame_samp = tibble(
+  normx = rnorm (10),
+  log_normx = normx > 0,
+  character = c ("y", "o", "c", "o", "m", "p", "r", "o", "u", "n"),
+  level = factor(sample(c("high", "medium", "low"), 10, replace = TRUE))
+)  
+
+mean_normx = mean(pull(frame_samp, normx))
+mean_log_normx = mean(pull(frame_samp, log_normx))
+mean_chara = mean(pull(frame_samp, character))
+mean_level = mean(pull(frame_samp, level))
+
+```
+Show which variable can caculate means and which can't :
+The mean of normal distribution R.V. is `r mean_norm`
+The mean of logic function outcoe is  `r mean_log_normx`
+The mean of characters is `r mean_chara`
+The mean of factor R.V. is `r mean_level`
+
+
+
+  
 
 
 
