@@ -14,8 +14,8 @@ library(tidyverse)
 ```{r}
  data("penguins", package = "palmerpenguins")
 ```
-This datasheet contains `r nrow(penguins)` subjects and `r ncol(penguins)` variables to describe the dimensions of penguins, introducing us the year, species, island, sex of those penguins, and bill_length_mm, bill_depth_mm, flippers_length_mm, body_mass_g in relative measures.
-Among those, mean of their flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`mm.
+This datasheet contains `r nrow(penguins)` subjects and `r ncol(penguins)` variables to describe the dimensions of penguins, introducing us the year, species, island, sex of those penguins, and bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g in relative measures.
+Among those, mean of their flipper length is `r mean(pull(penguins,flipper_length_mm), na.rm = TRUE)`mm.
 
 # Section 2 Make a  scatterplot
 ```{r}
@@ -49,19 +49,26 @@ Show which variable can caculate means and which can't :
 
 The mean of normal distribution R.V. is `r mean_normx`
 
-The mean of logic function outcoe is  `r mean_log_normx`
+The mean of logic function outcome is  `r mean_log_normx`
 
-The mean of characters is `r mean_chara`
-
-The mean of factor R.V. is `r mean_level`
+character and level can't get means because the results are 'NA'
 
 # Section 4 Convert variable types
 
 ```{r echo = TRUE, results='hide'}
-
+convert_log = as.numeric(pull(frame_samp,log_normx))
+convert_chara = as.numeric(pull(frame_samp, character))
+convert_fac = as.numeric(pull(frame_samp, level))
 
 ```
 
+We can see when we do coercion, the warning said NAs are created:
+
+logic type turned into `r convert_log`, which are meaning numbers.
+
+But characters showed up as NA, which aligns with the outcome that characters can't get a mean.
+
+For factor type variable , although level can become numbers `r convert_fac`after convertion, computers ban factor variables to calculate means in order to prevent misunderstanding of mean of categories.
 
 
 
